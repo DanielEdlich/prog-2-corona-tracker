@@ -3,6 +3,7 @@ package htw.berlin.coronatracker.services;
 import htw.berlin.coronatracker.models.LocationStats;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -21,7 +22,8 @@ public class CoronaVirusDataService {
     private List<LocationStats> allStats = new ArrayList();
 
     @PostConstruct
-
+    // sec min h d m y
+    @Scheduled(cron = "* * 1 * * *")
     public void fetchVirusData() throws IOException, InterruptedException {
         List<LocationStats> newStats = new ArrayList();
         HttpClient client = HttpClient.newHttpClient();
