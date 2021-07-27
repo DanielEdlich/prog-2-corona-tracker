@@ -46,7 +46,8 @@ public class LocationStats {
         return "LocationStats{" +
                 "state='" + state + '\'' +
                 ", country='" + country + '\'' +
-                ", latestTotalCases='" + latestTotalCases + '\'' +
+                ", latestTotalCases=" + latestTotalCases +
+                ", diffFromPrevDay=" + diffFromPrevDay +
                 '}';
     }
 }
